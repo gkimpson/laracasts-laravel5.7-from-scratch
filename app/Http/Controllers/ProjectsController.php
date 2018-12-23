@@ -13,4 +13,21 @@ class ProjectsController extends Controller
             'projects' => $projects
         ]);
     }
+
+    public function create()
+    {
+        return view('projects.create');
+    }
+
+    public function store()
+    {
+        // return request()->all();
+    
+        $project = new \App\Project();
+        $project->title = request('title');
+        $project->description = request('description');
+        $project->save();
+
+        return redirect('projects');
+    }
 }
