@@ -10,7 +10,7 @@ class ProjectsController extends Controller
     {
         $projects = \App\Project::all();
         return view('projects.index', [
-            'projects' => $projects,
+            'projects' => $projects
         ]);
     }
 }
