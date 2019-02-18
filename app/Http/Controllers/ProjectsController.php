@@ -22,7 +22,6 @@ class ProjectsController extends Controller
     public function store()
     {
         // return request()->all();
-    
         $project = new \App\Project();
         $project->title = request('title');
         $project->description = request('description');
@@ -30,4 +29,22 @@ class ProjectsController extends Controller
 
         return redirect('projects');
     }
+
+    public function edit($id)
+    {
+        $project = \App\Project::find($id);
+        return view('projects.edit', compact('project'));
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function destroy()
+    {
+
+    }
+
+
 }
